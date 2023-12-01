@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <!-- isotope js -->
+  <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+      <!-- jQery -->
+  <script src="../static/assets/js/jquery-3.4.1.min.js"></script>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="Vending Machine Application" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="../static/images/imagesnew/5853892.png" type="">
+
+  <title> G4 Vending Machine </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../static/assets/css/bootstrap.css" />
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- nice select  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+  <!-- font awesome style -->
+  <link href="../static/assets/css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="../static/assets/css/style1.css" rel="stylesheet" />
+
+  <!-- responsive style -->
+  <link href="../static/assets/css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <div class="hero_area">
+{#    <div class="bg-box">#}
+{#      <img src="../static/images/imagesnew/wallpaper.jpg" alt="">#}
+{#    </div>#}
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+
+           <span class="navbar-brand">
+                <span>
+                  G4 Vending Machine
+                </span>
+            </span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  mx-auto ">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+
+              </li>
+
+            </ul>
+            <div class="user_option">
+
+
+
+
+
+              </form>
+              <a href="#" class="order_online">
+                Check Out
+                <span id="cart-count">0</span> <!-- This will display the cart count -->
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+  </div>
+
+
+  <!-- food section -->
+
+  <section class="food_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Welcome!
+        </h2>
+      </div>
+
+{#     <ul class="filters_menu">#}
+{#    <li class="active" data-filter="*">All</li>#}
+{#    <li data-filter=".chips">Chips</li>#}
+{#    <li data-filter=".cookies">Cookies</li>#}
+{#    <li data-filter=".candy">Candy</li>#}
+{#    <li data-filter=".other">Other</li>#}
+{#    </ul>#}
+
+
+      <div class="filters-content">
+        <div class="row grid">
+            {#            cheeto#}
+          <div class="col-sm-6 col-lg-4 all chips">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="../static/images/thumbs/cheeto.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    {{ items[1]['name'].strip('"') }}
+                  </h5>
+                  <div id="quantity-{{ 1 }}">Available: {{ quantities.get(1, 'Out of Stock') }}</div>
+
+                  <div class="options">
+                    <h6>
+                   ${{ "%.2f"|format(items.get(1, {}).get('price', 'N/A')) }}
+                    </h6>
+                   <a href="#" class="add-to-cart" data-item-id="{{ 1}}" data-item-name="{{ items[1]['name'] }}" data-item-price="{{ items[1]['price'] }}">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            {#            hot cheeto#}
+          <div class="col-sm-6 col-lg-4 all chips">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                   <img src="../static/images/thumbs/hotcheetos.jpg " alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    {{ items[2]['name'].strip('"') }}
+                  </h5>
+                  <div id="quantity-{{ 2 }}">Available: {{ quantities.get(2, 'Out of Stock') }}</div>
+                  <div class="options">
+                    <h6>
+                   ${{ "%.2f"|format(items.get(2, {}).get('price', 'N/A')) }}
+                    </h6>
+                   <a href="#" class="add-to-cart" data-item-id="{{ 2}}" data-item-name="{{ items[2]['name'] }}" data-item-price="{{ items[2]['price'] }}">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            {#            doritos#}
+          <div class="col-sm-6 col-lg-4 all chips">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                   <img src="../static/images/thumbs/doritos.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    {{ items[3]['name'].strip('"') }}
+                  </h5>
+                  <div id="quantity-{{ 3 }}">Available: {{ quantities.get(3, 'Out of Stock') }}</div>
+                  <div class="options">
+                    <h6>
+                   ${{ "%.2f"|format(items.get(3, {}).get('price', 'N/A')) }}
+                    </h6>
+                   <a href="#" class="add-to-cart" data-item-id="{{ 3}}" data-item-name="{{ items[3]['name'] }}" data-item-price="{{ items[3]['price'] }}">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            {#            funyuns#}
+          <div class="col-sm-6 col-lg-4 all chips">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="../static/images/thumbs/funyuns.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <div id="quantity-{{ 4 }}">Available: {{ quantities.get(4, 'Out of Stock') }}</div>
+                  <div class="options">
+                    <h6>
+                   ${{ "%.2f"|format(items.get(4, {}).get('price', 'N/A')) }}
+                    </h6>
+                   <a href="#" class="add-to-cart" data-item-id="{{ 4}}" data-item-name="{{ items[4]['name'] }}" data-item-price="{{ items[4]['price'] }}">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            {#            reeses#}
+          <div class="col-sm-6 col-lg-4 all candy">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                   <img src="../static/images/thumbs/reeses.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    {{ items[5]['name'].strip('"') }}
+                  </h5>
+                  <div id="quantity-{{ 5 }}">Available: {{ quantities.get(5, 'Out of Stock') }}</div>
+                  <div class="options">
+                    <h6>
+                   ${{ "%.2f"|format(items.get(5, {}).get('price', 'N/A')) }}
+                    </h6>
+                   <a href="#" class="add-to-cart" data-item-id="{{ 5}}" data-item-name="{{ items[5]['name'] }}" data-item-price="{{ items[5]['price'] }}">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            {#            snickers#}
+          <div class="col-sm-6 col-lg-4 all candy">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="../static/images/thumbs/snickers.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    {{ items[6]['name'].strip('"') }}
+                  </h5>
+                  <div id="quantity-{{ 6 }}">Available: {{ quantities.get(6, 'Out of Stock') }}</div>
+                  <div class="options">
+                    <h6>
+                   ${{ "%.2f"|format(items.get(6, {}).get('price', 'N/A')) }}
+                    </h6>
+                   <a href="#" class="add-to-cart" data-item-id="{{ 6}}" data-item-name="{{ items[6]['name'] }}" data-item-price="{{ items[6]['price'] }}">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            {#            M&M's#}
+          <div class="col-sm-6 col-lg-4 all candy">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                   <img src="../static/images/thumbs/mm.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    {{ items[7]['name'].strip('"') }}
+                  </h5>
+                  <div id="quantity-{{ 7 }}">Available: {{ quantities.get(7, 'Out of Stock') }}</div>
+                  <div class="options">
+                    <h6>
+                   ${{ "%.2f"|format(items.get(7, {}).get('price', 'N/A')) }}
+                    </h6>
+                   <a href="#" class="add-to-cart" data-item-id="{{ 7}}" data-item-name="{{ items[7]['name'] }}" data-item-price="{{ items[7]['price'] }}">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            {#            Oreo#}
+          <div class="col-sm-6 col-lg-4 all cookies">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                   <img src="../static/images/thumbs/oreo.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    {{ items[8]['name'].strip('"') }}
+                  </h5>
+                  <div id="quantity-{{ 8 }}">Available: {{ quantities.get(8, 'Out of Stock') }}</div>
+                  <div class="options">
+                    <h6>
+                   ${{ "%.2f"|format(items.get(8, {}).get('price', 'N/A')) }}
+                    </h6>
+                   <a href="#" class="add-to-cart" data-item-id="{{ 8}}" data-item-name="{{ items[8]['name'] }}" data-item-price="{{ items[8]['price'] }}">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            {#            Chips Ahoy#}
+          <div class="col-sm-6 col-lg-4 all cookies">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                   <img src="../static/images/thumbs/chips_ahoy.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    {{ items[9]['name'].strip('"') }}
+                  </h5>
+                 <div id="quantity-{{ 9 }}">Available: {{ quantities.get(9, 'Out of Stock') }}</div>
+                  <div class="options">
+                    <h6>
+                   ${{ "%.2f"|format(items.get(9, {}).get('price', 'N/A')) }}
+                    </h6>
+                   <a href="#" class="add-to-cart" data-item-id="{{ 9}}" data-item-name="{{ items[9]['name'] }}" data-item-price="{{ items[9]['price'] }}">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            {#            Nature Valley#}
+          <div class="col-sm-6 col-lg-4 all other">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                   <img src="../static/images/thumbs/nature_valley.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    {{ items[10]['name'].strip('"') }}
+                  </h5>
+                  <div id="quantity-{{ 10 }}">Available: {{ quantities.get(10, 'Out of Stock') }}</div>
+                  <div class="options">
+                    <h6>
+                   ${{ "%.2f"|format(items.get(10, {}).get('price', 'N/A')) }}
+                    </h6>
+                   <a href="#" class="add-to-cart" data-item-id="{{ 10}}" data-item-name="{{ items[10]['name'] }}" data-item-price="{{ items[10]['price'] }}">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            {#            Gold Fish#}
+          <div class="col-sm-6 col-lg-4 all other">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                   <img src="../static/images/thumbs/goldfish.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    {{ items[11]['name'].strip('"') }}
+                  </h5>
+                  <div id="quantity-{{ 11 }}">Available: {{ quantities.get(11, 'Out of Stock') }}</div>
+                  <div class="options">
+                    <h6>
+                   ${{ "%.2f"|format(items.get(11, {}).get('price', 'N/A')) }}
+                    </h6>
+                   <a href="#" class="add-to-cart" data-item-id="{{ 11}}" data-item-name="{{ items[11]['name'] }}" data-item-price="{{ items[11]['price'] }}">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            {#            Beef Jerky#}
+          <div class="col-sm-6 col-lg-4 all other">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                   <img src="../static/images/thumbs/beef_jerky.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    {{ items[12]['name'].strip('"') }}
+                  </h5>
+                  <div id="quantity-{{ 12 }}">Available: {{ quantities.get(12, 'Out of Stock') }}</div>
+                  <div class="options">
+                    <h6>
+                   ${{ "%.2f"|format(items.get(12, {}).get('price', 'N/A')) }}
+                    </h6>
+                   <a href="#" class="add-to-cart" data-item-id="{{ 12}}" data-item-name="{{ items[12]['name'] }}" data-item-price="{{ items[12]['price'] }}">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<button class="invisible-button" onclick="yourFunction()">Invisible Button</button>
+    </div>
+  </section>
+
+
+
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script src="../static/assets/js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+
+  <!-- nice select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- custom js -->
+  <script src="../static/assets/js/custom.js"></script>
+  <!-- Google Map -->
+
+  <!-- End Google Map -->
+
+<script>
+     var itemIds = {{ item_ids | tojson | safe }};
+     console.log(itemIds);
+document.addEventListener('DOMContentLoaded', function() {
+    var addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            var itemId = this.getAttribute('data-item-id');
+            var itemName = this.getAttribute('data-item-name');
+            var itemPrice = parseFloat(this.getAttribute('data-item-price'));
+            addToCart(itemId, itemName, itemPrice);
+        });
+    });
+
+    updateCartCount();
+    // Assuming you have a list of item IDs
+    itemIds.forEach(id => updateItemQuantity(id));
+});
+document.querySelector('.order_online').addEventListener('click', function() {
+    window.location.href = '/checkout';
+});
+function updateItemQuantity(item_id) {
+    fetch(`/item_quantity/${item_id}?_=${new Date().getTime()}`)  // Adding a timestamp to prevent caching
+        .then(response => response.json())
+        .then(data => {
+            console.log('Updated data for item', item_id, ':', data);  // Debugging
+            const quantityElement = document.getElementById(`quantity-${item_id}`);
+            quantityElement.textContent = `Available: ${data.quantity > 0 ? data.quantity : 'Out of Stock'}`;
+
+            const addToCartButton = document.getElementById(`add-to-cart-${item_id}`);
+            if (data.quantity <= 0) {
+                addToCartButton.style.display = 'none';
+            } else {
+                addToCartButton.style.display = 'block';
+            }
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+function updateCartCount() {
+    fetch('/cart_count')
+        .then(response => response.json())
+        .then(data => {
+            const cartCountElement = document.getElementById('cart-count');
+            cartCountElement.textContent = data.cart_count;
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+function addToCart(itemId, itemName, itemPrice) {
+    fetch('/add_to_cart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ item_id: itemId, quantity: 1, name: itemName, price: itemPrice }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if(data.success) {
+            updateCartCount();
+            updateItemQuantity(itemId);
+        } else {
+            alert(data.message);  // Show the message from the server
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
+
+
+</script>
+</body>
+
+</html>
